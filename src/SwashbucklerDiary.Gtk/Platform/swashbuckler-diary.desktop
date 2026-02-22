@@ -5,7 +5,7 @@ Exec=/opt/apps/com.yucore.swashbucklerdiary/SwashbucklerDiary.Gtk %F
 GenericName=Diary
 Icon=swashbuckler-diary
 MimeType=x-scheme-handler/swashbuckler;x-scheme-handler/xiakeriji;
-Name=Swashbuckler Diary
+Name=Sdiray
 Terminal=false
 Type=Application
 
@@ -44,7 +44,7 @@ Name[ko_KR]=협객 일기
 Name[pt_BR]=Diário do Espadachim
 Name[ru_RU]=Дневник Сорвиголовы
 Name[vi_VN]=Nhật ký Hiệp khách
-Name[zh_CN]=侠客日记
+Name[zh_CN]=Sdiary
 Name[zh_TW]=俠客日記
 
 [Desktop Action Search]

@@ -62,7 +62,6 @@ namespace SwashbucklerDiary.Rcl.Pages
             I18n.SetCulture(new(value));
             Task[] tasks =
             [
-                InsertDefaultDiaries(),
                 SettingService.SetAsync(s => s.FirstSetLanguage, true),
                 SettingService.SetAsync(s => s.Language, value)
             ];

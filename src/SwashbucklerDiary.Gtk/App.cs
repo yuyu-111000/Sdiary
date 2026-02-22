@@ -34,9 +34,9 @@ namespace SwashbucklerDiary.Gtk
             var i18n = _serviceProvider.GetRequiredService<Masa.Blazor.I18n>();
 
             app = global::Gtk.Application.New(applicationId, Gio.ApplicationFlags.HandlesCommandLine);
-            GLib.Functions.SetPrgname("SwashbucklerDiary");
+            GLib.Functions.SetPrgname("Sdiray");
             // Set the human-readable application name for app bar and task list.
-            GLib.Functions.SetApplicationName(i18n.T("Swashbuckler Diary"));
+            GLib.Functions.SetApplicationName("Sdiray");
             app.OnActivate += ApplicationActivate;
             app.OnCommandLine += HandleOnCommandLine;
 

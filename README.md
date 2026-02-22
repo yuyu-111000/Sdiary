@@ -1,10 +1,10 @@
-<h1 align="center">侠客日记</h1>
+<h1 align="center">Sdiary</h1>
 
 <div align="center">
 
 [English](./README.en-US.md) | 简体中文
 
-「 侠客日记 」是一个开源、跨平台的本地日记APP。
+「 Sdiary 」是一个开源、跨平台的本地日记APP。
 
 不是所有日记都叫流水账，这本是侠客的秘籍！记录生活点滴，书写你的江湖传说。
 

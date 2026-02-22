@@ -9,7 +9,7 @@ namespace SwashbucklerDiary.Rcl.Services
         public bool Markdown { get; set; } = true;
         public string NickName { get; set; } = string.Empty;
         public string Sign { get; set; } = string.Empty;
-        public string Avatar { get; set; } = "_content/SwashbucklerDiary.Rcl/logo/logo.jpg";
+        public string Avatar { get; set; } = "_content/SwashbucklerDiary.Rcl/logo/appiconfg.png";
         public bool HidePrivacyModeEntrance { get; set; }
         public string PrivacyModeEntrancePassword { get; set; } = string.Empty;
         public string PrivacyModeFunctionSearchKey { get; set; } = string.Empty;
