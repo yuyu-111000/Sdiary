@@ -22,12 +22,17 @@ jobs:
         run: dotnet workload restore src/SwashbucklerDiary.Maui/SwashbucklerDiary.Maui.csproj
 
       - name: Build macOS
-        run: dotnet publish src/SwashbucklerDiary.Maui/SwashbucklerDiary.Maui.csproj -f net10.0-maccatalyst -c Release -p:EnableCodeSigning=false -p:CodesignRequireProvisioningProfile=false -p:CodesignKey= -p:CodesignProvision= -p:CreatePackage=true -v detailed 2>&1 | tail -100
+        run: dotnet publish src/SwashbucklerDiary.Maui/SwashbucklerDiary.Maui.csproj -f net10.0-maccatalyst -c Release -p:EnableCodeSigning=false -p:CodesignRequireProvisioningProfile=false -p:CodesignKey= -p:CodesignProvision=
+
+      - name: Find build output
+        run: find src/SwashbucklerDiary.Maui/bin/Release/net10.0-maccatalyst -name "*.app" -o -name "*.pkg" 2>/dev/null || echo "No .app or .pkg found, listing directory:" && ls -la src/SwashbucklerDiary.Maui/bin/Release/net10.0-maccatalyst/ || echo "Directory not found"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: Sdiray-macOS
           path: |
-            src/SwashbucklerDiary.Maui/bin/Release/net10.0-maccatalyst/**/*.pkg
             src/SwashbucklerDiary.Maui/bin/Release/net10.0-maccatalyst/**/*.app
+            src/SwashbucklerDiary.Maui/bin/Release/net10.0-maccatalyst/**/*.pkg
+            src/SwashbucklerDiary.Maui/bin/Release/net10.0-maccatalyst/publish/**
+          if-no-files-found: warn
