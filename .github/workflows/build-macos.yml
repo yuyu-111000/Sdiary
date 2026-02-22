@@ -22,10 +22,12 @@ jobs:
         run: dotnet workload restore src/SwashbucklerDiary.Maui/SwashbucklerDiary.Maui.csproj
 
       - name: Build macOS
-        run: dotnet publish src/SwashbucklerDiary.Maui/SwashbucklerDiary.Maui.csproj -f net10.0-maccatalyst -c Release
+        run: dotnet publish src/SwashbucklerDiary.Maui/SwashbucklerDiary.Maui.csproj -f net10.0-maccatalyst -c Release -p:EnableCodeSigning=false -p:CodesignRequireProvisioningProfile=false -p:CodesignKey= -p:CodesignProvision= -p:CreatePackage=true -v detailed 2>&1 | tail -100
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: Sdiray-macOS
-          path: src/SwashbucklerDiary.Maui/bin/Release/net10.0-maccatalyst/**/*.pkg
+          path: |
+            src/SwashbucklerDiary.Maui/bin/Release/net10.0-maccatalyst/**/*.pkg
+            src/SwashbucklerDiary.Maui/bin/Release/net10.0-maccatalyst/**/*.app
